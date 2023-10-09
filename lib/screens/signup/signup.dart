@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:milife_app/screens/signup/signup.dart';
+import 'package:milife_app/screens/login/login.dart';
 
 // ignore: use_key_in_widget_constructors
-class LoginScreen extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView( // Wrap with SingleChildScrollView
+      body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
           child: Column(
@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
                 'assets/images/login.png',
               ),
               Text(
-                'Sign In',
+                'Sign Up',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 27,
@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   children: [
                     // ignore: prefer_const_constructors
@@ -42,16 +42,49 @@ class LoginScreen extends StatelessWidget {
                         focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade200)),
                         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade200)),
                         prefixIcon: Icon(
+                          Icons.person_2_outlined,
+                          color: Colors.teal[200],
+                        ),
+                      ),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(
+                          color: Colors.teal[200],
+                        fontFamily: 'Times New Roman',
+                        
+                        ),
+                        focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade200)),
+                        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade200)),
+                        prefixIcon: Icon(
                           Icons.email_outlined,
                           color: Colors.teal[200],
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.0),
+                    SizedBox(height: 6.0),
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: 'Password',
+                        labelStyle: TextStyle(
+                          color: Colors.teal[200],
+                          fontFamily: 'Times New Roman',
+                          ),
+                        focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade200)),
+                        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.teal.shade200)),
+                        prefixIcon: Icon(
+                          Icons.lock_outline,
+                          color: Colors.teal[200],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 6.0),
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: 'Confirm Password',
                         labelStyle: TextStyle(
                           color: Colors.teal[200],
                           fontFamily: 'Times New Roman',
@@ -81,7 +114,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -91,23 +124,14 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     ),
-                    SizedBox(height: 20.0),
-                    Text(
-                      'Forgot your password ?',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Times New Roman',
-                        color: Colors.teal[200],
-                      ),
-                    ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 25),
                     Container(
-                      margin: EdgeInsets.only(bottom: 79),
+                      margin: EdgeInsets.only(bottom: 41), // Adjust the value as needed
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an account ?",
+                            "Already have an account?",
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Times New Roman',
@@ -119,21 +143,22 @@ class LoginScreen extends StatelessWidget {
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => SignupScreen()),
+                                MaterialPageRoute(builder: (context) => LoginScreen()),
                               );
                             },
                             child: Text(
-                              "Sign up",
+                              "Login In",
                               style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Times New Roman',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                                fontSize: 16,
+                                fontFamily: 'Times New Roman',
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
 
                   ],
                 ),
