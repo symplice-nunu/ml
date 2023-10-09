@@ -4,15 +4,18 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Screen'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextField(
+            // Display the image at the top
+            Image.asset(
+              'assets/images/login.png',
+            ),
+            SizedBox(height: 16.0),
+            Padding(padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                TextField(
               decoration: InputDecoration(
                 labelText: 'Username',
               ),
@@ -33,9 +36,11 @@ class LoginScreen extends StatelessWidget {
               },
               child: Text('Login'),
             ),
+              ],
+            ),
+            )
           ],
         ),
-      ),
     );
   }
 }
